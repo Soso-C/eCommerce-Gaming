@@ -1,9 +1,18 @@
-function App() {
-  return (
-    <div className="App">
-      <h1 className="text-center text-3xl">Hello App</h1>
-    </div>
-  );
-}
+import React from 'react'
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import Navbar from './components/navbar/Navbar'
+import TopNavbarMessage from './components/topnavbar/TopNavbarMessage'
+import Home from "./pages/Home"
 
-export default App;
+
+export default function App() {
+  return (
+      <Router>
+        <TopNavbarMessage />
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+        </Routes>
+      </Router>
+  )
+}
