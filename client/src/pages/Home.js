@@ -1,9 +1,9 @@
-import React from 'react'
-
+import React from "react";
+import Slider from "../components/slider/Slider";
 export default function Home() {
   return (
-    <div>
-      <h1 className='text-center text-3xl'>Hello From Home</h1>
-    </div>
-  )
+    <>
+      <Slider />
+    </>
+  );
 }

@@ -15,12 +15,11 @@ export default function Navbar() {
   };
   const showSearchBar = () => {
     setToggleSb(!toggleSb);
-    console.log("toggle");
   };
 
   // start mobile first plus facile
   return (
-    <nav className={`fixed top-19 w-full bg-black items-center flex p-4`}>
+    <nav className={`fixed top-19 w-full bg-black items-center flex p-4 z-20`}>
       <div className="flex justify-between items-center w-full flex-wrap md:flex-nowrap max-w-7xl mx-auto">
         {/* Logo */}
         <h1 className="text-lg font-bold md:w-auto cursor-pointer text-white -order-1">
@@ -43,7 +42,7 @@ export default function Navbar() {
             className="bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none w-full"
             type="search"
             name="search"
-            placeholder="Search"
+            placeholder="Rechercher"
           />
           <button className="absolute right-0 top-0 mt-6 mr-4 md:mt-2">
             <AiOutlineSearch className="h-6 w-6" />
