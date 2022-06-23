@@ -9,6 +9,7 @@ export const products = {
       image: "",
       category: "",
       bestSelling: false,
+      newProduct: false,
     },
     {
       name: "",
@@ -19,6 +20,7 @@ export const products = {
       image: "",
       category: "",
       bestSelling: false,
+      newProduct: false,
     },
     {
       name: "",
@@ -29,6 +31,7 @@ export const products = {
       image: "",
       category: "",
       bestSelling: false,
+      newProduct: false,
     },
     {
       name: "",
@@ -39,6 +42,7 @@ export const products = {
       image: "",
       category: "",
       bestSelling: false,
+      newProduct: false,
     },
     {
       name: "",
@@ -49,6 +53,7 @@ export const products = {
       image: "",
       category: "",
       bestSelling: false,
+      newProduct: false,
     },
     {
       name: "",
@@ -59,6 +64,7 @@ export const products = {
       image: "",
       category: "",
       bestSelling: false,
+      newProduct: false,
     },
     {
       name: "",
@@ -69,6 +75,7 @@ export const products = {
       image: "",
       category: "",
       bestSelling: false,
+      newProduct: false,
     },
     {
       name: "",
@@ -79,6 +86,7 @@ export const products = {
       image: "",
       category: "",
       bestSelling: false,
+      newProduct: false,
     },
   ],
 };
