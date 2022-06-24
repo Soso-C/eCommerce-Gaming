@@ -70,6 +70,7 @@ export default function Slider() {
         {Array.from({ length: 4 }).map((item, index) => {
           return (
             <button
+              key={index}
               className={`${
                 slide.index === index + 1 ? "bg-blue-500" : "bg-transparent"
               } w-5 h-5 rounded-[50%] border-white border-2 `}
