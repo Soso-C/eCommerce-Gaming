@@ -1,4 +1,6 @@
-export const products = {
+import { v4 as uuidv4 } from "uuid";
+
+const products = {
   products: [
     {
       name: "",
@@ -8,8 +10,10 @@ export const products = {
       countStock: 10,
       image: "",
       category: "",
+      type: "",
       bestSelling: false,
       newProduct: false,
+      id: uuidv4(),
     },
     {
       name: "",
@@ -19,8 +23,10 @@ export const products = {
       countStock: 10,
       image: "",
       category: "",
+      type: "",
       bestSelling: false,
       newProduct: false,
+      id: uuidv4(),
     },
     {
       name: "",
@@ -30,8 +36,10 @@ export const products = {
       countStock: 10,
       image: "",
       category: "",
+      type: "",
       bestSelling: false,
       newProduct: false,
+      id: uuidv4(),
     },
     {
       name: "",
@@ -41,8 +49,10 @@ export const products = {
       countStock: 10,
       image: "",
       category: "",
+      type: "",
       bestSelling: false,
       newProduct: false,
+      id: uuidv4(),
     },
     {
       name: "",
@@ -52,8 +62,10 @@ export const products = {
       countStock: 10,
       image: "",
       category: "",
+      type: "",
       bestSelling: false,
       newProduct: false,
+      id: uuidv4(),
     },
     {
       name: "",
@@ -63,8 +75,10 @@ export const products = {
       countStock: 10,
       image: "",
       category: "",
+      type: "",
       bestSelling: false,
       newProduct: false,
+      id: uuidv4(),
     },
     {
       name: "",
@@ -74,8 +88,10 @@ export const products = {
       countStock: 10,
       image: "",
       category: "",
+      type: "",
       bestSelling: false,
       newProduct: false,
+      id: uuidv4(),
     },
     {
       name: "",
@@ -85,8 +101,12 @@ export const products = {
       countStock: 10,
       image: "",
       category: "",
+      type: "",
       bestSelling: false,
       newProduct: false,
+      id: uuidv4(),
     },
   ],
 };
+
+export default products;
