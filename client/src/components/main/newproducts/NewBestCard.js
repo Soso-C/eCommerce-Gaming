@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MdAddShoppingCart } from "react-icons/md";
+import { IoBagAddOutline } from "react-icons/io5";
 
 export default function NewBestCard({ product }) {
   return (
@@ -13,8 +13,10 @@ export default function NewBestCard({ product }) {
           {product.name}
         </Link>
         <div className="flex justify-between items-center">
-          <span className="font-bold text-blue-600">{product.price}</span>
-          <MdAddShoppingCart className="w-7 h-7 text-orange-400" />
+          <span className="font-bold text-blue-600">{product.price}€</span>
+          <button className="bg-orange-300 rounded-[50%] h-8 w-8 flex items-center justify-center">
+            <IoBagAddOutline className="w-6 h-6 text-amber-900" />
+          </button>
         </div>
       </div>
     </div>

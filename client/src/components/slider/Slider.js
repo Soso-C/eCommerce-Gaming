@@ -45,7 +45,7 @@ export default function Slider() {
 
   return (
     // Container slider
-    <div className="mt-16 h-72 md:mt-24 max-w-screen md:h-[300px] lg:h-[500px] overflow-hidden relative">
+    <div className="mt-16 h-72 md:mt-24 max-w-screen md:h-[350px] lg:h-[500px] overflow-hidden relative">
       {/* Img */}
       {imgSlider.map((img, index) => {
         return (
