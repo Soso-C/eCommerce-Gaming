@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function CategoryCard({ items }) {
   return (
-    <div className="bg-white h-full flex w-full flex-col">
+    <div className="bg-white h-full flex w-full flex-col shadow-sm shadow-gray-300">
       <div className="w-full h-full">
         <img
           src={items.img}
