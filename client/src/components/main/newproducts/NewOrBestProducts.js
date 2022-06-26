@@ -13,19 +13,19 @@ export default function NewOrBestProducts({ newOrBest }) {
           ? products.products
               .filter(
                 (product) =>
-                  product.newProduct === true && product.bestSelling !== true
+                  product?.newProduct === true && product?.bestSelling !== true
               )
               .slice(0, 4)
-              .map((product, index) => {
+              .map((product) => {
                 return <NewBestCard key={product.id} product={product} />;
               })
           : products.products
               .filter(
                 (product) =>
-                  product.bestSelling === true && product.newProduct !== true
+                  product?.bestSelling === true && product?.newProduct !== true
               )
               .slice(0, 4)
-              .map((product, index) => {
+              .map((product) => {
                 return <NewBestCard key={product.id} product={product} />;
               })}
       </div>

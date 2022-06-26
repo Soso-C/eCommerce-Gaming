@@ -5,7 +5,7 @@ import TopMainBanner from "./topmainbanner/TopMainBanner";
 
 export default function Main() {
   return (
-    <main className="bg-gray-100">
+    <main className="">
       <TopMainBanner />
       <CategoryBanner />
       <NewOrBestProducts newOrBest="new" />

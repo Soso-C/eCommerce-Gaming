@@ -16,7 +16,7 @@ export default function CategoryCard({ items }) {
         {items.sousCat.map((cat, index) => {
           return (
             <li key={index}>
-              <Link to={cat.href} className="hover:text-sky-900">
+              <Link to={cat.href} className="hover:opacity-75">
                 {cat.category}
               </Link>
             </li>
