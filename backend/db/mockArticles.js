@@ -1,15 +1,14 @@
-// import { v4 as uuidv4 } from "uuid";
-
 const products = {
   products: [
     {
-      name: "New Product Items Name",
+      name: "MSI RTX 3080 ",
       description: "",
       brand: "",
-      price: 127,
+      price: 1250,
       countStock: 10,
-      image:
-        "https://media.ldlc.com/r150/ld/products/00/05/96/23/LD0005962309_0005962320.jpg",
+      image: "https://media.materiel.net/r150/products/MN0005920878_1.jpg",
+      imageDetails:
+        "https://media.materiel.net/r550/products/MN0005920878_1.jpg",
       category: "",
       type: "",
       bestSelling: false,
@@ -115,4 +114,4 @@ const products = {
   ],
 };
 
-export default products;
+module.exports = products;

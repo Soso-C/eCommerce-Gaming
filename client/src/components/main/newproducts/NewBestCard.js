@@ -4,9 +4,13 @@ import { IoBagAddOutline } from "react-icons/io5";
 
 export default function NewBestCard({ product }) {
   return (
-    <div className="bg-white h-[350px] w-full p-4 shadow-sm shadow-gray-300">
+    <div className="bg-white h-[350px] w-full p-4 shadow-sm shadow-gray-300 group">
       <div className="h-3/4">
-        <img src={product.image} className="mx-auto w-52 h-52 pt-8" alt="" />
+        <img
+          src={product.image}
+          className="mx-auto w-52 h-52 pt-8 group-hover:scale-110 duration-500"
+          alt=""
+        />
       </div>
       <div className="h-1/4 flex flex-col justify-end gap-2">
         <Link to="/" className="text-md font-medium">
@@ -14,7 +18,7 @@ export default function NewBestCard({ product }) {
         </Link>
         <div className="flex justify-between items-center">
           <span className="font-bold text-blue-600">{product.price}€</span>
-          <button className="bg-orange-300 rounded-[50%] h-8 w-8 flex items-center justify-center">
+          <button className="bg-orange-300 rounded-[50%] h-8 w-8 flex items-center justify-center hover:opacity-75">
             <IoBagAddOutline className="w-6 h-6 text-amber-900" />
           </button>
         </div>

@@ -4,6 +4,7 @@ import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import TopNavbarMessage from "./components/topnavbar/TopNavbarMessage";
 import Home from "./pages/Home";
+import Article from "./pages/Article";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/article/:id" element={<Article />} />
         </Routes>
         <Footer />
       </Router>

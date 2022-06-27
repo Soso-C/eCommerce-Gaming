@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   AiOutlineMenu,
   AiOutlineSearch,
@@ -25,7 +26,7 @@ export default function Navbar() {
       <div className="flex justify-between items-center w-full flex-wrap md:flex-nowrap max-w-7xl mx-auto">
         {/* Logo */}
         <h1 className="text-lg font-bold md:w-auto cursor-pointer text-white -order-1">
-          SC Shop
+          <Link to={"/"}>SC Shop</Link>
         </h1>
         {/* Burger */}
         <button
@@ -58,11 +59,11 @@ export default function Navbar() {
           >
             <AiOutlineSearch className="w-8 h-8" />
           </button>
-          <button className="flex md:flex-col items-center justify-center text-white border-r border-white md:border-none px-2">
+          <button className="flex md:flex-col items-center justify-center text-white border-r border-white md:border-none px-2 hover:opacity-75">
             <AiOutlineShoppingCart className="w-8 h-8" />
             <span className="hidden md:block font-medium py-1">Panier</span>
           </button>
-          <button className="flex md:flex-col items-center justify-center text-white border-r border-white md:border-none px-2">
+          <button className="flex md:flex-col items-center justify-center text-white border-r border-white md:border-none px-2 hover:opacity-75">
             <VscAccount className="w-8 h-8" />
             <span className="hidden md:block font-medium py-1">Compte</span>
           </button>

@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 export default function CategoryCard({ items }) {
   return (
-    <div className="bg-white h-full flex w-full flex-col shadow-sm shadow-gray-300">
-      <div className="w-full h-full">
+    <div className="bg-white h-full flex w-full flex-col shadow-sm shadow-gray-300 group">
+      <div className="w-full h-full overflow-hidden">
         <img
           src={items.img}
           alt={`images ${items.title}`}
-          className="mx-auto h-[200px]"
+          className="mx-auto h-[200px] group-hover:scale-110 duration-500"
         />
       </div>
       <span className="text-xl font-bold text-center">{items.title}</span>
