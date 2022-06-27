@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function ProductDetails({ product }) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
-    <section>
+    <section id="targetHere">
       <div className="relative max-w-7xl px-4 pt-20 md:pt-32 mx-auto h-full py-10">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 justify-items-center items-center mt-12 bg-white p-6 rounded shadow-sm shadow-gray-300">
           <div className="h-full w-full flex flex-col items-center justify-center overflow-hidden">
