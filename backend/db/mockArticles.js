@@ -17,13 +17,14 @@ const products = {
     },
 
     {
-      name: "New Product Items Name",
+      name: 'Apple MacBook M1 Pro 16"',
       description: "",
       brand: "",
-      price: 1248,
-      countStock: 10,
-      image:
-        "https://media.ldlc.com/r150/ld/products/00/05/96/24/LD0005962468.jpg",
+      price: 2750,
+      countStock: 6,
+      image: "https://media.materiel.net/r150/products/MN0005902616_1.jpg",
+      imageDetails:
+        "https://media.materiel.net/r550/products/MN0005902616_1.jpg",
       category: "",
       type: "",
       bestSelling: false,
