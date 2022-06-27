@@ -1,7 +1,7 @@
 const products = {
   products: [
     {
-      name: "MSI RTX 3080 ",
+      name: "MSI RTX 3080 Gaming Trio Z 12GB",
       description: "",
       brand: "",
       price: 1250,

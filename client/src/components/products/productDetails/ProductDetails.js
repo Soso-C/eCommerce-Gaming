@@ -1,23 +1,29 @@
 import React from "react";
 
 export default function ProductDetails({ product }) {
-  console.log(product);
   return (
     <section>
-      <div className="relative max-w-7xl px-4 lg:pt-32 mx-auto h-full py-10">
+      <div className="relative max-w-7xl px-4 pt-20 md:pt-32 mx-auto h-full py-10">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 justify-items-center items-center mt-12 bg-white p-6 rounded shadow-sm shadow-gray-300">
           <div className="h-full w-full flex flex-col items-center justify-center overflow-hidden">
             <img
               alt=""
-              className="object-cover h-full w-full overflow-hidden"
-              src={product.image}
+              className="object-cover h-full w-full overflow-hidden md:w-2/3 lg:w-full"
+              src={product?.imageDetails}
             />
           </div>
           <div className="w-full h-full">
-            <span>{product.countStock} en stock</span>
+            {product?.countStock > 0 ? (
+              <span className="font-medium">
+                Encore {product?.countStock} en stock
+              </span>
+            ) : (
+              <span className="font-medium">Hors stock</span>
+            )}
+
             <div className="flex justify-between mt-8">
-              <h1 className="text-2xl font-bold">{product.name}</h1>
-              <p className="text-lg font-bold">{product.price}€</p>
+              <h1 className="text-2xl font-bold truncate">{product?.name}</h1>
+              <p className="text-lg font-bold">{product?.price}€</p>
             </div>
 
             <div className="py-2 mt-8 space-y-3 text-justify">

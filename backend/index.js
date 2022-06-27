@@ -23,14 +23,14 @@ app.get("/articles/:id", (req, res) => {
   res.status(200).json({ message: "Produit trouvée", data: result });
 });
 
-app.get("/newArticle", (req, res) => {
+app.get("/newArticles", (req, res) => {
   const result = product.products.filter(
     (product) => product.newProduct === true
   );
   res.status(200).json({ message: "Produit trouvée", data: result });
 });
 
-app.get("/bestArticle", (req, res) => {
+app.get("/bestArticles", (req, res) => {
   const result = product.products.filter(
     (product) => product.bestSelling === true
   );
