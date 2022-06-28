@@ -1,10 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  AiOutlineMenu,
-  AiOutlineSearch,
-  AiOutlineShoppingCart,
-} from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
+import { IoBagOutline } from "react-icons/io5";
 import { VscAccount } from "react-icons/vsc";
 
 export default function Navbar() {
@@ -60,7 +57,14 @@ export default function Navbar() {
             <AiOutlineSearch className="w-8 h-8" />
           </button>
           <button className="flex md:flex-col items-center justify-center text-white border-r border-white md:border-none px-2 hover:opacity-75">
-            <AiOutlineShoppingCart className="w-8 h-8" />
+            <div className="relative">
+              <IoBagOutline className="w-8 h-8 relative" />
+              <span className="absolute top-[-6px] right-[-6px] w-5 h-5 bg-red-500 flex items-center justify-center rounded-xl">
+                <span className="text-sm flex items-center justify-center">
+                  0
+                </span>
+              </span>
+            </div>
             <span className="hidden md:block font-medium py-1">Panier</span>
           </button>
           <button className="flex md:flex-col items-center justify-center text-white border-r border-white md:border-none px-2 hover:opacity-75">

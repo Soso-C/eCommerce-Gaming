@@ -5,6 +5,8 @@ import Navbar from "./components/navbar/Navbar";
 import TopNavbarMessage from "./components/topnavbar/TopNavbarMessage";
 import Home from "./pages/Home";
 import Article from "./pages/Article";
+import NotFound from "./pages/NotFound";
+import ProductsList from "./components/products/productsList/ProductsList";
 
 export default function App() {
   return (
@@ -15,6 +17,11 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/article/:id" element={<Article />} />
+          <Route path="/ordinateur/:slug" element={<ProductsList />} />
+          <Route path="/composant-pc/:slug" element={<ProductsList />} />
+          <Route path="/periph/:slug" element={<ProductsList />} />
+          <Route path="/image-et-son/:slug" element={<ProductsList />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </Router>

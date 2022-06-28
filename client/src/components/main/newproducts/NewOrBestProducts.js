@@ -23,9 +23,10 @@ export default function NewOrBestProducts({ newOrBest }) {
         {newOrBest === "new" ? "Nouveautés" : "Meilleures ventes"}
       </span>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-8 lg:pt-16">
-        {product.slice(0, 4).map((product) => {
-          return <NewBestCard key={product.id} product={product} />;
-        })}
+        {product &&
+          product.slice(0, 4).map((product) => {
+            return <NewBestCard key={product.id} product={product} />;
+          })}
       </div>
     </div>
   );
