@@ -25,7 +25,10 @@ export default function NewBestCard({ product }) {
         </Link>
         <div className="flex justify-between items-center">
           <span className="font-bold text-blue-600">{product.price}€</span>
-          <button className="bg-orange-300 rounded-[50%] h-8 w-8 flex items-center justify-center hover:opacity-75">
+          <button
+            className="bg-orange-300 rounded-[50%] h-8 w-8 flex items-center justify-center hover:opacity-75"
+            // onClick={}
+          >
             <IoBagAddOutline className="w-6 h-6 text-amber-900" />
           </button>
         </div>

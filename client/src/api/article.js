@@ -7,6 +7,13 @@ export async function getArticleById(urlEndPoint) {
   return articleResponse.data.data;
 }
 
+// Get all Articles
+export async function getArticles() {
+  const articleResponse = await axios.get("http://localhost:3001/articles");
+  if (!articleResponse) return "sorry, couldn’t load articles";
+  return articleResponse.data.data;
+}
+
 // Get Nouveautés
 
 export async function getNewsProd() {

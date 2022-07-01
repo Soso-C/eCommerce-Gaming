@@ -6,7 +6,8 @@ import TopNavbarMessage from "./components/topnavbar/TopNavbarMessage";
 import Home from "./pages/Home";
 import Article from "./pages/Article";
 import NotFound from "./pages/NotFound";
-import ProductsList from "./components/products/productsList/ProductsList";
+import Cart from "./pages/Cart";
+import Products from "./pages/Products";
 
 export default function App() {
   return (
@@ -17,10 +18,12 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/article/:id" element={<Article />} />
-          <Route path="/ordinateur/:slug" element={<ProductsList />} />
-          <Route path="/composant-pc/:slug" element={<ProductsList />} />
-          <Route path="/periph/:slug" element={<ProductsList />} />
-          <Route path="/image-et-son/:slug" element={<ProductsList />} />
+          <Route path="/cart" element={<Cart />} />
+          {/* <Route path="/ordinateur/:slug" element={<Products />} />
+          <Route path="/composant-pc/:slug" element={<Products />} />
+          <Route path="/periph/:slug" element={<Products />} />
+          <Route path="/image-et-son/:slug" element={<Products />} /> */}
+          <Route path="/category/:slug" element={<Products />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

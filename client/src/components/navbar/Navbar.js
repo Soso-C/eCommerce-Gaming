@@ -60,7 +60,7 @@ export default function Navbar() {
             <div className="relative">
               <IoBagOutline className="w-8 h-8 relative" />
               <span className="absolute top-[-6px] right-[-6px] w-5 h-5 bg-red-500 flex items-center justify-center rounded-xl">
-                <span className="text-sm flex items-center justify-center">
+                <span className="text-sm flex items-center justify-center font-medium">
                   0
                 </span>
               </span>
