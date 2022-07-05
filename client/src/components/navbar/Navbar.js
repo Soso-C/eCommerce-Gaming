@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
 import { IoBagOutline } from "react-icons/io5";
 import { VscAccount } from "react-icons/vsc";
+// import { CartContext } from "../../context/CartContext";
 
 export default function Navbar() {
   const [toggle, setToggle] = useState(false);
   const [toggleSb, setToggleSb] = useState(false);
+
+  // const { itemsQty } = useContext(CartContext);
+  // console.log(itemsQty);
 
   const showNav = () => {
     setToggle(!toggle);
