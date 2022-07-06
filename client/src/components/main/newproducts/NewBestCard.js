@@ -5,7 +5,18 @@ import { IoBagAddOutline } from "react-icons/io5";
 export default function NewBestCard({ product }) {
   const navigate = useNavigate();
   return (
-    <div className="bg-white h-[350px] w-full p-4 shadow-sm shadow-gray-300 group">
+    <div className="bg-white h-[350px] w-full p-4 shadow-sm shadow-gray-300 group relative">
+      {product?.countStock === 0 ? (
+        <span className="top-2 right-2 text-red-500 text-sm absolute font-medium">
+          Hors stock
+        </span>
+      ) : (
+        <span className="top-2 right-2 text-green-500 text-sm absolute font-medium">
+          En stock
+        </span>
+      )}
+      <span></span>
+
       <div
         className="h-3/4 cursor-pointer"
         onClick={() => navigate(`/article/${product.id}`)}

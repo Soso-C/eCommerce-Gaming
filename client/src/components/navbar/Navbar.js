@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
 import { IoBagOutline } from "react-icons/io5";
 import { VscAccount } from "react-icons/vsc";
@@ -8,6 +8,8 @@ import { VscAccount } from "react-icons/vsc";
 export default function Navbar() {
   const [toggle, setToggle] = useState(false);
   const [toggleSb, setToggleSb] = useState(false);
+
+  const navigate = useNavigate();
 
   // const { itemsQty } = useContext(CartContext);
   // console.log(itemsQty);
@@ -60,7 +62,10 @@ export default function Navbar() {
           >
             <AiOutlineSearch className="w-8 h-8" />
           </button>
-          <button className="flex md:flex-col items-center justify-center text-white border-r border-white md:border-none px-2 hover:opacity-75">
+          <button
+            className="flex md:flex-col items-center justify-center text-white border-r border-white md:border-none px-2 hover:opacity-75"
+            onClick={() => navigate("/cart")}
+          >
             <div className="relative">
               <IoBagOutline className="w-8 h-8 relative" />
               <span className="absolute top-[-6px] right-[-6px] w-5 h-5 bg-red-500 flex items-center justify-center rounded-xl">

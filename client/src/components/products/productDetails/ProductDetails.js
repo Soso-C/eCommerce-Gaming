@@ -14,7 +14,8 @@ export default function ProductDetails({ product }) {
             <img
               alt=""
               className="object-cover h-full w-full overflow-hidden md:w-2/3 lg:w-full"
-              src={product?.imageDetails || product.image}
+              // a remplacer uniquement par imageDetails
+              src={product?.imageDetails || product?.image}
             />
           </div>
           <div className="w-full h-full">
@@ -72,9 +73,9 @@ export default function ProductDetails({ product }) {
                   </div>
                   <button
                     type="submit"
-                    className={`block px-5 py-3 ml-3 text-xs font-medium text-white bg-green-600 rounded hover:bg-green-500`}
+                    className={`block px-5 py-3 ml-3 text-xs font-medium text-white bg-green-600 rounded-lg hover:bg-green-500`}
                   >
-                    Add to Cart
+                    Ajouter au panier
                   </button>
                 </div>
               </form>
