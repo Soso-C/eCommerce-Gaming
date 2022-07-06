@@ -19,10 +19,6 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/article/:id" element={<Article />} />
           <Route path="/cart" element={<Cart />} />
-          {/* <Route path="/ordinateur/:slug" element={<Products />} />
-          <Route path="/composant-pc/:slug" element={<Products />} />
-          <Route path="/periph/:slug" element={<Products />} />
-          <Route path="/image-et-son/:slug" element={<Products />} /> */}
           <Route path="/category/:slug" element={<Products />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

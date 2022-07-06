@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { imgSlider } from "./imgSlider";
 import BtnSlide from "./BtnSlide";
+import { useNavigate } from "react-router-dom";
 
 export default function Slider() {
   const [slide, setSlide] = useState({
     index: 1,
     inProgress: false,
   });
+
+  const navigate = useNavigate();
 
   // Move to nextSlide
   const nextSlide = () => {
@@ -58,7 +61,8 @@ export default function Slider() {
             <img
               src={img.image}
               alt={`img ${index}`}
-              className="w-full h-full object-cover md:object-fill"
+              className="w-full h-full object-cover md:object-fill cursor-pointer"
+              // onClick={() => navigate("/category/carte-graphique")}
             />
           </div>
         );

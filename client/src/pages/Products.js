@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import ProductsList from "../components/products/productsList/ProductsList";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getArticles } from "../api/article";
 import NotFound from "./NotFound";
 
 export default function Products() {
   const [articles, setArticles] = useState([]);
-  const [option, setOption] = useState("");
+  // const [option, setOption] = useState("");
   const { slug } = useParams();
 
   useEffect(() => {
@@ -18,6 +18,12 @@ export default function Products() {
   }, [slug]);
 
   return (
-    <>{articles.length > 0 ? <ProductsList data={articles} /> : <NotFound />}</>
+    <>
+      {articles.length > 0 ? (
+        <ProductsList articles={articles} />
+      ) : (
+        <NotFound />
+      )}
+    </>
   );
 }
