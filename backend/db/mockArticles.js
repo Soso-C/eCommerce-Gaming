@@ -246,7 +246,7 @@ const products = {
     {
       name: "Intel Core i5 12600KF",
       description: "",
-      brand: "",
+      brand: "intel",
       price: 300,
       countStock: 10,
       image: "https://media.materiel.net/r150/products/MN0005902098_1.jpg",
@@ -261,7 +261,7 @@ const products = {
     {
       name: "AMD Ryzen 9 5900X",
       description: "",
-      brand: "",
+      brand: "amd",
       price: 750,
       countStock: 10,
       image: "https://media.materiel.net/r150/products/MN0005744805_1.jpg",
@@ -363,22 +363,134 @@ const products = {
       newProduct: false,
       id: 12,
     },
+    // Barrete Mémoire
     {
-      name: 'Apple MacBook M1 Pro 16" 2022',
+      name: "Corsair Dominator 2 x 8 Go DDR4 3200 MHz CL16",
       description: "",
       brand: "",
-      price: 2750,
+      price: 170,
       countStock: 6,
-      image: "https://media.materiel.net/r150/products/MN0005902616_1.jpg",
+      image:
+        "https://media.materiel.net/r150/products/MN0005681002_1_0005681030.jpg",
       imageDetails:
-        "https://media.materiel.net/r550/products/MN0005902616_1.jpg",
-      category: "telephone",
+        "https://media.materiel.net/r550/products/MN0005681002_1_0005681030.jpg",
+      category: "barette-memoire",
       type: "",
       bestSelling: false,
       newProduct: true,
-      id: 46,
+      id: 13,
+    },
+    {
+      name: "G.Skill Trident Z Neo 2 x 16 Go DDR4 3600 MHz CL14",
+      description: "",
+      brand: "",
+      price: 430,
+      countStock: 6,
+      image:
+        "https://media.materiel.net/r150/products/MN0005397400_1_0005397564_0005397584_0005397586_0005469335_0005900119_0005900133.jpg",
+      imageDetails:
+        "https://media.materiel.net/r550/products/MN0005397400_1_0005397564_0005397584_0005397586_0005469335_0005900119_0005900133.jpg",
+      category: "barette-memoire",
+      type: "",
+      bestSelling: false,
+      newProduct: true,
+      id: 14,
+    },
+    {
+      name: "Corsair Vengeance 4 x 32 Go DDR4 3200 MHz CL16",
+      description: "",
+      brand: "",
+      price: 1000,
+      countStock: 6,
+      image: "https://media.materiel.net/r150/products/MN0005872458_1.jpg",
+      imageDetails:
+        "https://media.materiel.net/r550/products/MN0005872458_1.jpg",
+      category: "barette-memoire",
+      type: "",
+      bestSelling: false,
+      newProduct: true,
+      id: 15,
+    },
+    {
+      name: "G.Skill Trident Z  8 x 32 Go DDR4 3200 Mhz CL14",
+      description: "",
+      brand: "",
+      price: 1950,
+      countStock: 6,
+      image:
+        "https://media.materiel.net/r150/products/MN0005517092_1_0005571510_0005804162.jpg",
+      imageDetails:
+        "https://media.materiel.net/r550/products/MN0005517092_1_0005571510_0005804162.jpg",
+      category: "barette-memoire",
+      type: "",
+      bestSelling: false,
+      newProduct: true,
+      id: 16,
+    },
+    // Disque dur SSD
+    {
+      name: "Western Digital WD Red - 2 To",
+      description: "",
+      brand: "",
+      price: 90,
+      countStock: 6,
+      image: "https://media.materiel.net/r550/products/MN0005812821_1.jpg",
+      imageDetails:
+        "https://media.materiel.net/r550/products/MN0005812821_1.jpg",
+      category: "disque-dur-ssd",
+      type: "",
+      bestSelling: false,
+      newProduct: true,
+      id: 17,
+    },
+    {
+      name: "Samsung 870 QVO - 2 To",
+      description: "",
+      brand: "",
+      price: 280,
+      countStock: 6,
+      image:
+        "https://media.materiel.net/r550/products/MN0005692319_1_0005692320_0005692321_0005692327.jpg",
+      imageDetails:
+        "https://media.materiel.net/r550/products/MN0005692319_1_0005692320_0005692321_0005692327.jpg",
+      category: "disque-dur-ssd",
+      type: "",
+      bestSelling: false,
+      newProduct: true,
+      id: 18,
+    },
+    {
+      name: "Samsung 980 Pro - 4 To",
+      description: "",
+      brand: "",
+      price: 800,
+      countStock: 6,
+      image:
+        "https://media.materiel.net/r150/products/MN0005729553_1_0005787817.jpg",
+      imageDetails:
+        "https://media.materiel.net/r550/products/MN0005729553_1_0005787817.jpg",
+      category: "disque-dur-ssd",
+      type: "",
+      bestSelling: false,
+      newProduct: true,
+      id: 19,
+    },
+    {
+      name: "Corsair MP600 Pro XT - 4 To",
+      description: "",
+      brand: "",
+      price: 1220,
+      countStock: 6,
+      image:
+        "https://media.materiel.net/r150/products/MN0005881545_1_0005881548_0005881563.jpg",
+      imageDetails:
+        "https://media.materiel.net/r550/products/MN0005881545_1_0005881548_0005881563.jpg",
+      category: "disque-dur-ssd",
+      type: "",
+      bestSelling: false,
+      newProduct: true,
+      id: 17,
     },
   ],
 };
-
 module.exports = products;

@@ -21,7 +21,7 @@ const categoryProducts = [
       { category: "Carte Mère", href: "/category/carte-mere" },
       { category: "Processeur", href: "/category/processeur" },
       { category: "Barette Mémoire", href: "/category/barette-memoire" },
-      { category: "Disque Dur", href: "/category/disque-dur" },
+      { category: "Disque Dur / SSD", href: "/category/disque-dur-ssd" },
     ],
     id: uuidv4(),
   },

@@ -29,9 +29,9 @@ export default function ProductDetails({ product }) {
               </strong>
             )}
 
-            <div className="flex justify-between mt-8">
-              <h1 className="text-2xl font-bold truncate">{product?.name}</h1>
-              <p className="text-lg font-medium text-blue-600">
+            <div className="flex flex-col md:flex-row justify-between mt-8">
+              <h1 className="text-xl font-bold truncate">{product?.name}</h1>
+              <p className="text-lg font-medium text-blue-600 ">
                 {product?.price}€
               </p>
             </div>

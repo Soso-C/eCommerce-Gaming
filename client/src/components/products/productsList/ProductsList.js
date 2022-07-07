@@ -34,6 +34,7 @@ export default function ProductsList({ articles }) {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 py-8 h-full px-4 mt-2">
         {articles
+          // Trie nos objets en DESC ou ASC
           .sort((a, b) => {
             if (sortArray === "ASC") {
               return a.price - b.price;
