@@ -1121,10 +1121,10 @@ const products = {
     /** Image & Son **/
     // TV
     {
-      name: "Logitech Powerplay",
+      name: "LG OLED 4K UHD HDR",
       description: "",
       brand: "",
-      price: 130,
+      price: 1300,
       countStock: 6,
       image:
         "https://media.materiel.net/r150/products/MN0005942066_0005942078_0005942084.jpg",
@@ -1140,7 +1140,7 @@ const products = {
       name: "Sony KD-75X89K - TV 4K UHD HDR",
       description: "",
       brand: "",
-      price: 130,
+      price: 2500,
       countStock: 6,
       image:
         "https://media.materiel.net/r150/products/MN0005956233_0005956242_0005956261_0005956267_0005956278.jpg",
