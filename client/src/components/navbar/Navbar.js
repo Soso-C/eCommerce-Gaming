@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
 import { IoBagOutline } from "react-icons/io5";
 import { VscAccount } from "react-icons/vsc";
-// import { CartContext } from "../../context/CartContext";
+import { CartContext } from "../../context/CartContext";
 
 export default function Navbar() {
   const [toggle, setToggle] = useState(false);
@@ -11,8 +11,8 @@ export default function Navbar() {
 
   const navigate = useNavigate();
 
-  // const { itemsQty } = useContext(CartContext);
-  // console.log(itemsQty);
+  const { itemsCartQty } = useContext(CartContext);
+  console.log(itemsCartQty);
 
   const showNav = () => {
     setToggle(!toggle);
@@ -70,7 +70,7 @@ export default function Navbar() {
               <IoBagOutline className="w-8 h-8 relative" />
               <span className="absolute top-[-6px] right-[-6px] w-5 h-5 bg-red-500 flex items-center justify-center rounded-xl">
                 <span className="text-sm flex items-center justify-center font-medium">
-                  0
+                  {itemsCartQty}
                 </span>
               </span>
             </div>

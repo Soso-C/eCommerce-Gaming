@@ -1,10 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { CartContext } from "../../../context/CartContext";
 
 export default function ProductDetails({ product }) {
   // Permet de target le haut de la page lorsque'on arrive sur la page
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const { addToCart } = useContext(CartContext);
+  const [quantity, setQuantity] = useState(1);
+
+  // const objItems = {
+  //   product,
+  //   quantity: parseInt(quantity),
+  // };
 
   return (
     <section>
@@ -67,13 +76,15 @@ export default function ProductDetails({ product }) {
                       type="number"
                       id="quantity"
                       min="1"
-                      value="1"
                       className="w-12 py-3 text-md text-center rounded bg-gray-300 outline-none"
+                      value={quantity}
+                      onChange={(e) => setQuantity(e.target.value)}
                     />
                   </div>
                   <button
                     type="submit"
                     className={`block px-5 py-3 ml-3 text-xs font-medium text-white bg-green-600 rounded-lg hover:bg-green-500`}
+                    onClick={() => addToCart(product, quantity)}
                   >
                     Ajouter au panier
                   </button>
