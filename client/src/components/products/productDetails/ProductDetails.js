@@ -10,11 +10,6 @@ export default function ProductDetails({ product }) {
   const { addToCart } = useContext(CartContext);
   const [quantity, setQuantity] = useState(1);
 
-  // const objItems = {
-  //   product,
-  //   quantity: parseInt(quantity),
-  // };
-
   return (
     <section>
       <div className="relative max-w-7xl px-4 pt-20 md:pt-32 mx-auto h-full py-10">
@@ -84,7 +79,9 @@ export default function ProductDetails({ product }) {
                   <button
                     type="submit"
                     className={`block px-5 py-3 ml-3 text-xs font-medium text-white bg-green-600 rounded-lg hover:bg-green-500`}
-                    onClick={() => addToCart(product, quantity)}
+                    onClick={(e) =>
+                      e.preventDefault(addToCart(product, quantity))
+                    }
                   >
                     Ajouter au panier
                   </button>

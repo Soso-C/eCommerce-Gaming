@@ -41,7 +41,7 @@ export default function NewBestCard({ product }) {
           {product.countStock > 0 ? (
             <button
               className="bg-orange-300 rounded-[50%] h-8 w-8 flex items-center justify-center hover:opacity-75"
-              onClick={() => addToCart(product)}
+              onClick={() => addToCart(product, 1)}
             >
               <IoBagAddOutline className="w-6 h-6 text-amber-900" />
             </button>
