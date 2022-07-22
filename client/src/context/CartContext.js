@@ -23,7 +23,7 @@ export const CartContextProvider = ({ children }) => {
     const existItems = cart.findIndex((obj) => obj.id === produit.id);
     if (existItems !== -1) {
       setCart((prevCart) =>
-        // Parcours tous les elements de notre cart
+        // Parcours tous les élements de notre cart
         prevCart.map((item) => {
           // Si j'ai un element qui a le meme id que le produit alors je copie cet element et j'update la quantity
           if (item.id === produit.id) {
