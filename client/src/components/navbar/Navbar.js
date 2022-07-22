@@ -12,7 +12,6 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   const { itemsCartQty } = useContext(CartContext);
-  console.log(itemsCartQty);
 
   const showNav = () => {
     setToggle(!toggle);
