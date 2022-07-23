@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import { CartContext } from "../../context/CartContext";
 
 export default function CardBasket({ article }) {
   const navigate = useNavigate();
+  const { cart, setCart } = useContext(CartContext);
+
+  // Supprime un item du cart
+  const removeItem = (id) => {
+    const newArr = cart.filter((item) => item.id !== id);
+    setCart([...newArr]);
+  };
   return (
     <div className="flex items-center hover:bg-gray-50 -mx-8 px-6 py-5">
       <div className="flex w-2/5">
@@ -17,7 +25,10 @@ export default function CardBasket({ article }) {
           >
             {article.name}
           </span>
-          <button className="font-semibold hover:text-red-500 text-gray-500 text-xs flex w-fit">
+          <button
+            className="font-semibold hover:text-red-500 text-gray-500 text-xs flex w-fit"
+            onClick={() => removeItem(article.id)}
+          >
             Supprimer
           </button>
         </div>
