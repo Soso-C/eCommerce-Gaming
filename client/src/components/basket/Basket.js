@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import CardBasket from "./CardBasket";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { CartContext } from "../../context/CartContext";
 export default function Basket({ cart }) {
   const navigate = useNavigate();
-  const { clearCart } = useContext(CartContext);
+  const { clearCart, totalPrice } = useContext(CartContext);
 
   return (
     <div className="max-w-7xl mx-auto mt-32">
@@ -31,7 +31,9 @@ export default function Basket({ cart }) {
       </div>
       {/* Total price etc */}
       <div className="bg-white shadow-md w-3/4 mx-auto p-4 rounded">
-        <h3 className="font-semibold text-center pb-2">Prix Total : 20500€</h3>
+        <h3 className="font-semibold text-center pb-2">
+          Prix Total : {totalPrice}€
+        </h3>
         <div className="flex flex-col items-center justify-center space-y-2">
           <button
             className="py-2 px-4 bg-green-600 w-fit rounded-full text-sm text-white font-medium"

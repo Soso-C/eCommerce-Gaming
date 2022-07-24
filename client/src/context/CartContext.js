@@ -51,6 +51,7 @@ export const CartContextProvider = ({ children }) => {
     setCart(newArr);
   };
 
+  // Clear le cart complet
   const clearCart = () => {
     setCart([]);
   };
@@ -86,6 +87,8 @@ export const CartContextProvider = ({ children }) => {
     removeItem,
     changeQty,
     clearCart,
+    totalPrice,
+    setTotalPrice,
   };
 
   return (

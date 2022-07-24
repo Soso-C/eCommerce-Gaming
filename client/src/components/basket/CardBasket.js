@@ -5,14 +5,22 @@ import { CartContext } from "../../context/CartContext";
 
 export default function CardBasket({ article }) {
   const navigate = useNavigate();
-  const { removeItem, changeQty } = useContext(CartContext);
+  const { removeItem, changeQty, setTotalPrice, cart } =
+    useContext(CartContext);
 
   const [qty, setQty] = useState(article.quantity);
 
-  // Permet de refresh la page avec la nouvelle quantity ajouté
+  // Permet de refresh la page quand quantity ajouté donc refresh totalPrice et qty
   useEffect(() => {
     setQty(article.quantity);
-  }, [article.quantity]);
+    setTotalPrice(
+      cart
+        .map((article) => {
+          return article.quantity * article.price;
+        })
+        .reduce((prevsum, sum) => prevsum + sum) || []
+    );
+  }, [article.quantity, removeItem]);
 
   return (
     <div className="flex items-center hover:bg-gray-50 -mx-8 px-6 py-5">
