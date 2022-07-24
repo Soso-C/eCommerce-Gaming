@@ -9,6 +9,8 @@ export const CartContextProvider = ({ children }) => {
 
   const [itemsCartQty, setItemsCartQty] = useState(cart.length || 0);
 
+  const [totalPrice, setTotalPrice] = useState(0);
+
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
     setItemsCartQty(cart.length);
@@ -46,13 +48,17 @@ export const CartContextProvider = ({ children }) => {
   // Supprime un item du cart
   const removeItem = (id) => {
     const newArr = cart.filter((item) => item.id !== id);
-    setCart([...newArr]);
+    setCart(newArr);
+  };
+
+  const clearCart = () => {
+    setCart([]);
   };
 
   // Change Qty
   const changeQty = (id, action) => {
     setCart((prevCart) =>
-      // Parcous tous les élements du cart et si item id = id alors on return le nouveau objet dans notre cart
+      // Parcours tous les élements du cart et si item id = id alors on return le nouveau objet dans notre cart
       prevCart.map((item) => {
         if (item.id === id && action === "INCREMENT") {
           return {
@@ -79,6 +85,7 @@ export const CartContextProvider = ({ children }) => {
     setItemsCartQty,
     removeItem,
     changeQty,
+    clearCart,
   };
 
   return (
