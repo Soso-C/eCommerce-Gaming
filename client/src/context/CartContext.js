@@ -11,6 +11,8 @@ export const CartContextProvider = ({ children }) => {
 
   const [totalPrice, setTotalPrice] = useState(0);
 
+  const [checkoutIndex, setCheckoutIndex] = useState(1);
+
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
     setItemsCartQty(cart.length);
@@ -18,8 +20,8 @@ export const CartContextProvider = ({ children }) => {
 
   // Ajouter un produit dans le cart
   const addToCart = (produit, quantity) => {
-    // Si est déja existant
     const existItems = cart.findIndex((obj) => obj.id === produit.id);
+    // Si est déja existant
     if (existItems !== -1) {
       setCart((prevCart) =>
         // Parcours tous les élements de notre cart
@@ -89,6 +91,8 @@ export const CartContextProvider = ({ children }) => {
     clearCart,
     totalPrice,
     setTotalPrice,
+    checkoutIndex,
+    setCheckoutIndex,
   };
 
   return (

@@ -24,7 +24,7 @@ const BasketEmpty = () => {
         className="hover:opacity-75 bg-amber-500 rounded-full py-2 p-4 mt-4 text-white font-medium"
         onClick={() => navigate("/")}
       >
-        Rechercher des articles
+        Découvrir nos articles
       </button>
     </div>
   );

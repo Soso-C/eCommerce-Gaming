@@ -35,7 +35,7 @@ export default function Basket({ cart }) {
           })}
         </div>
       </div>
-      {/* Total price / Passer commande etc */}
+      {/* P2 / Total price / Passer commande etc */}
       <div className="bg-white shadow-md w-3/4 mx-auto p-4 rounded">
         <h3 className="font-semibold text-center pb-2">
           Prix Total : {totalPrice}€
@@ -80,7 +80,7 @@ export const ModalConfirmClearCart = ({ clearCart, setToggle, toggle }) => {
       <div className="bg-black opacity-50 w-full h-full fixed top-0 left-0" />
       <div className="p-8 bg-white rounded-lg shadow-2xl fixed -translate-x-1/2 top-1/2 left-1/2">
         <h2 className="text-lg font-bold">
-          Voulez vous vraiment supprimer votre panier ?
+          Voulez vous vraiment vider votre panier ?
         </h2>
 
         <div className="flex items-center justify-center mt-8 text-sm">
