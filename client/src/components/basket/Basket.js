@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import CardBasket from "./CardBasket";
 import { AiOutlineArrowLeft } from "react-icons/ai";
@@ -6,6 +6,12 @@ import { CartContext } from "../../context/CartContext";
 export default function Basket({ cart }) {
   const navigate = useNavigate();
   const { clearCart, totalPrice } = useContext(CartContext);
+
+  const [toggle, setToggle] = useState(false);
+
+  const toggleModal = () => {
+    setToggle(!toggle);
+  };
 
   return (
     <div className="max-w-7xl mx-auto mt-32">
@@ -29,21 +35,21 @@ export default function Basket({ cart }) {
           })}
         </div>
       </div>
-      {/* Total price etc */}
+      {/* Total price / Passer commande etc */}
       <div className="bg-white shadow-md w-3/4 mx-auto p-4 rounded">
         <h3 className="font-semibold text-center pb-2">
           Prix Total : {totalPrice}€
         </h3>
         <div className="flex flex-col items-center justify-center space-y-2">
           <button
-            className="py-2 px-4 bg-green-600 w-fit rounded-full text-sm text-white font-medium"
+            className="py-2 px-4 bg-green-600 w-40 rounded-full text-sm text-white font-medium"
             onClick={() => navigate("/")}
           >
             Passer commande
           </button>
           <button
-            className="py-2 px-4 bg-red-500 w-fit rounded-full text-sm text-white font-medium"
-            onClick={clearCart}
+            className="py-2 px-4 bg-red-500 w-40 rounded-full text-sm text-white font-medium"
+            onClick={toggleModal}
           >
             Vider mon panier
           </button>
@@ -56,6 +62,44 @@ export default function Basket({ cart }) {
           Continuer vos achats
         </Link>
       </div>
+      {/* Modal Clear Cart */}
+      {toggle && (
+        <ModalConfirmClearCart
+          clearCart={clearCart}
+          setToggle={setToggle}
+          toggle={toggle}
+        />
+      )}
     </div>
   );
 }
+
+export const ModalConfirmClearCart = ({ clearCart, setToggle, toggle }) => {
+  return (
+    <>
+      <div className="bg-black opacity-50 w-full h-full fixed top-0 left-0" />
+      <div className="p-8 bg-white rounded-lg shadow-2xl fixed -translate-x-1/2 top-1/2 left-1/2">
+        <h2 className="text-lg font-bold">
+          Voulez vous vraiment supprimer votre panier ?
+        </h2>
+
+        <div className="flex items-center justify-center mt-8 text-sm">
+          <button
+            type="button"
+            className="px-4 py-2 font-medium text-white rounded bg-green-500"
+            onClick={clearCart}
+          >
+            Oui
+          </button>
+          <button
+            type="button"
+            className="px-4 py-2 ml-2 font-medium text-white rounded bg-red-500"
+            onClick={() => setToggle(!toggle)}
+          >
+            Non
+          </button>
+        </div>
+      </div>
+    </>
+  );
+};
