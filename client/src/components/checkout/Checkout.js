@@ -32,13 +32,13 @@ export default function Checkout({ totalPrice, cart }) {
               />
               <input
                 className="px-2 focus:outline-none focus:ring-2 focus:ring-gray-500 border-b border-gray-200 leading-4 text-base placeholder-gray-600 py-4 w-full"
-                type="text"
-                placeholder="Adresse"
+                type="email"
+                placeholder="Email"
               />
               <input
                 className="px-2 focus:outline-none focus:ring-2 focus:ring-gray-500 border-b border-gray-200 leading-4 text-base placeholder-gray-600 py-4 w-full"
                 type="text"
-                placeholder="Complément d'adresse"
+                placeholder="Adresse"
               />
               <div className="flex justify-between flex-col sm:flex-row w-full items-start space-y-8 sm:space-y-0 sm:space-x-8">
                 <input
@@ -73,7 +73,7 @@ export default function Checkout({ totalPrice, cart }) {
                 to="/cart"
                 className="text-base leading-4 underline hover:text-gray-800 text-gray-600 pt-2"
               >
-                Retour a mon panier
+                Retour au panier
               </Link>
             </div>
           </div>
