@@ -13,13 +13,6 @@ export default function CardBasket({ article }) {
   // Permet de refresh le component quand quantity ou totalPrice trigger
   useEffect(() => {
     setQty(article.quantity);
-    setTotalPrice(
-      cart
-        .map((article) => {
-          return article.quantity * article.price;
-        })
-        .reduce((prevsum, sum) => prevsum + sum) || []
-    );
   }, [article.quantity, removeItem]);
 
   return (

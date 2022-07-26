@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import CardBasket from "./CardBasket";
 import { AiOutlineArrowLeft } from "react-icons/ai";
