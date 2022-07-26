@@ -16,6 +16,16 @@ export const CartContextProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
     setItemsCartQty(cart.length);
+
+    // if (cart !== []) {
+    //   setTotalPrice(
+    //     cart
+    //       .map((article) => {
+    //         return article.quantity * article.price;
+    //       })
+    //       .reduce((prevsum, sum) => prevsum + sum)
+    //   );
+    // }
   }, [cart, itemsCartQty]);
 
   // Ajouter un produit dans le cart

@@ -43,7 +43,7 @@ export default function Basket({ cart }) {
         <div className="flex flex-col items-center justify-center space-y-2">
           <button
             className="py-2 px-4 bg-green-600 w-40 rounded-full text-sm text-white font-medium"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/checkout")}
           >
             Passer commande
           </button>
