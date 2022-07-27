@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import CheckoutInput from "./CheckoutInput";
 import CheckoutRight from "./CheckoutRight";
 
-export default function Checkout({ totalPrice, cart, fullItemsQty }) {
-  const [totalQtyCart, setTotalQtyCart] = useState(0);
-
+export default function Checkout({ totalPrice, fullItemsQty }) {
   return (
     // Partie left de checkout
     <div className="overflow-y-hidden">
@@ -49,7 +47,7 @@ export default function Checkout({ totalPrice, cart, fullItemsQty }) {
                 <CheckoutInput type="text" placeholder="Numéro de la carte" />
               </div>
             </div>
-            <button className="focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 mt-8 text-base font-medium leading-4 hover:bg-black py-4 w-full md:w-4/12 lg:w-full text-white bg-gray-800">
+            <button className="mt-8 text-base font-medium leading-4 hover:bg-black py-4 w-full md:w-4/12 lg:w-full text-white bg-gray-800">
               Procéder au paiement
             </button>
             <div className="mt-4 flex justify-start items-center w-full">
@@ -62,11 +60,7 @@ export default function Checkout({ totalPrice, cart, fullItemsQty }) {
             </div>
           </div>
           {/* Partie right du Checkout */}
-          <CheckoutRight
-            totalPrice={totalPrice}
-            totalQtyCart={totalQtyCart}
-            fullItemsQty={fullItemsQty}
-          />
+          <CheckoutRight totalPrice={totalPrice} fullItemsQty={fullItemsQty} />
         </div>
       </div>
     </div>

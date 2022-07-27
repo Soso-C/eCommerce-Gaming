@@ -5,8 +5,7 @@ import { CartContext } from "../../context/CartContext";
 
 export default function CardBasket({ article }) {
   const navigate = useNavigate();
-  const { removeItem, changeQty, setTotalPrice, cart } =
-    useContext(CartContext);
+  const { removeItem, changeQty } = useContext(CartContext);
 
   const [qty, setQty] = useState(article.quantity);
 

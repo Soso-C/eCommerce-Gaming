@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { imgSlider } from "./imgSlider";
 import BtnSlide from "./BtnSlide";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 export default function Slider() {
   const [slide, setSlide] = useState({
@@ -9,7 +9,7 @@ export default function Slider() {
     inProgress: false,
   });
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // Move to nextSlide
   const nextSlide = () => {

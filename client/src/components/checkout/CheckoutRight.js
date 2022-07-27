@@ -1,10 +1,6 @@
 import React from "react";
 
-export default function CheckoutRight({
-  totalPrice,
-  totalQtyCart,
-  fullItemsQty,
-}) {
+export default function CheckoutRight({ totalPrice, fullItemsQty }) {
   return (
     <div className="flex flex-col justify-start items-start bg-gray-50 w-full p-6 md:p-14 shadow-md">
       <div>

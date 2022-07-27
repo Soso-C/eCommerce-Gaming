@@ -6,14 +6,10 @@ export const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState(
     JSON.parse(localStorage.getItem("cart")) || []
   );
-
   const [itemsCartQty, setItemsCartQty] = useState(cart.length || 0);
-
   const [totalPrice, setTotalPrice] = useState(0);
-
   const [fullItemsQty, setFullItemsQty] = useState(0);
 
-  console.log(fullItemsQty);
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
     setItemsCartQty(cart.length);
