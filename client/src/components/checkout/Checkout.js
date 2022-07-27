@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import CheckoutInput from "./CheckoutInput";
 import CheckoutRight from "./CheckoutRight";
 
-export default function Checkout({ totalPrice, cart }) {
+export default function Checkout({ totalPrice, cart, fullItemsQty }) {
   const [totalQtyCart, setTotalQtyCart] = useState(0);
 
   return (
@@ -62,7 +62,11 @@ export default function Checkout({ totalPrice, cart }) {
             </div>
           </div>
           {/* Partie right du Checkout */}
-          <CheckoutRight totalPrice={totalPrice} totalQtyCart={totalQtyCart} />
+          <CheckoutRight
+            totalPrice={totalPrice}
+            totalQtyCart={totalQtyCart}
+            fullItemsQty={fullItemsQty}
+          />
         </div>
       </div>
     </div>

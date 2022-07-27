@@ -11,8 +11,9 @@ export const CartContextProvider = ({ children }) => {
 
   const [totalPrice, setTotalPrice] = useState(0);
 
-  const [checkoutIndex, setCheckoutIndex] = useState(1);
+  const [fullItemsQty, setFullItemsQty] = useState(0);
 
+  console.log(fullItemsQty);
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
     setItemsCartQty(cart.length);
@@ -25,8 +26,16 @@ export const CartContextProvider = ({ children }) => {
           })
           .reduce((prevsum, sum) => prevsum + sum)
       );
+      setFullItemsQty(
+        cart
+          .map((item) => {
+            return item.quantity;
+          })
+          .reduce((prevsum, sum) => prevsum + sum)
+      );
     } else {
       setTotalPrice(0);
+      setFullItemsQty(0);
     }
   }, [cart, itemsCartQty]);
 
@@ -103,8 +112,7 @@ export const CartContextProvider = ({ children }) => {
     clearCart,
     totalPrice,
     setTotalPrice,
-    checkoutIndex,
-    setCheckoutIndex,
+    fullItemsQty,
   };
 
   return (

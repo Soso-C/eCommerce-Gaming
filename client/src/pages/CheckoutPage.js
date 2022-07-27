@@ -3,6 +3,8 @@ import Checkout from "../components/checkout/Checkout";
 import { CartContext } from "../context/CartContext";
 
 export default function CheckoutPage() {
-  const { totalPrice, cart } = useContext(CartContext);
-  return <Checkout totalPrice={totalPrice} cart={cart} />;
+  const { totalPrice, cart, fullItemsQty } = useContext(CartContext);
+  return (
+    <Checkout totalPrice={totalPrice} cart={cart} fullItemsQty={fullItemsQty} />
+  );
 }
