@@ -7,7 +7,7 @@ export default function Cart() {
   const { cart } = useContext(CartContext);
   return (
     <div className={cart.length === 0 ? "h-full w-full" : ""}>
-      {cart.length === 0 ? <BasketEmpty /> : <Basket cart={cart} />}
+      {cart.length === 0 ? <BasketEmpty /> : <Basket />}
     </div>
   );
 }
