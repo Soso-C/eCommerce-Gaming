@@ -22,13 +22,12 @@ export default function CheckoutForm() {
           {...register("lastname", {
             required: { value: true },
             pattern: {
-              value:
-                /(([A-Za-z]+[\-\']?)*([A-Za-z]+)?\s)+([A-Za-z]+[\-\']?)*([A-Za-z]+)?$/,
+              value: /^([A-Z][a-z]+([ ]?[a-z]?['-]?[A-Z][a-z]+)*)$/,
               message: "Entrez un nom valide",
             },
             minLength: {
-              value: 5,
-              message: "Minimum 5 caracteres",
+              value: 3,
+              message: "Minimum 3 caracteres",
             },
             maxLength: {
               value: 50,
@@ -45,13 +44,12 @@ export default function CheckoutForm() {
           {...register("name", {
             required: { value: true },
             pattern: {
-              value:
-                /(([A-Za-z]+[\-\']?)*([A-Za-z]+)?\s)+([A-Za-z]+[\-\']?)*([A-Za-z]+)?$/,
+              value: /^([A-Z][a-z]+([ ]?[a-z]?['-]?[A-Z][a-z]+)*)$/,
               message: "Entrez un nom valide",
             },
             minLength: {
-              value: 5,
-              message: "Minimum 5 caracteres",
+              value: 3,
+              message: "Minimum 3 caracteres",
             },
             maxLength: {
               value: 50,
@@ -134,6 +132,14 @@ export default function CheckoutForm() {
             type="text"
             placeholder="Numéro de la carte"
             id="cardnumber"
+            error={errors.cardnumber}
+            {...register("cardnumber", {
+              required: true,
+              pattern: {
+                value: /(\d{4}[-. ]?){4}|\d{4}[-. ]?\d{6}[-. ]?\d{5}/,
+                message: "Entrez un numéro de carte valide",
+              },
+            })}
           />
         </div>
       </div>

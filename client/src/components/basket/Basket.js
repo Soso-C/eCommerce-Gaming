@@ -77,8 +77,8 @@ export default function Basket() {
 export const ModalConfirmClearCart = ({ clearCart, setToggle, toggle }) => {
   return (
     <>
-      <div className="bg-black opacity-50 w-full h-full fixed top-0 left-0" />
-      <div className="p-8 bg-white rounded-lg shadow-2xl fixed -translate-x-1/2 top-1/2 left-1/2">
+      <div className="bg-black opacity-50 w-full h-full fixed top-0 left-0 z-40" />
+      <div className="p-8 bg-white rounded-lg shadow-2xl fixed -translate-x-1/2 top-1/2 left-1/2 z-40">
         <h2 className="text-lg font-bold">
           Voulez vous vraiment vider votre panier ?
         </h2>

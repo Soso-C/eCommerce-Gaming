@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import Cart from "./pages/Cart";
 import Products from "./pages/Products";
 import CheckoutPage from "./pages/CheckoutPage";
+import LoginPage from "./pages/LoginPage";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/category/:slug" element={<Products />} />
           <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
