@@ -75,7 +75,10 @@ export default function Navbar() {
             </div>
             <span className="hidden md:block font-medium py-1">Panier</span>
           </button>
-          <button className="flex md:flex-col items-center justify-center text-white border-r border-white md:border-none px-2 hover:opacity-75">
+          <button
+            className="flex md:flex-col items-center justify-center text-white border-r border-white md:border-none px-2 hover:opacity-75"
+            onClick={() => navigate("/login")}
+          >
             <VscAccount className="w-8 h-8" />
             <span className="hidden md:block font-medium py-1">Compte</span>
           </button>

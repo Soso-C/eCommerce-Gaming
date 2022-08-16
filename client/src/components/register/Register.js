@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiOutlineEye } from "react-icons/ai";
 import { FiAtSign } from "react-icons/fi";
 export default function Register({ toggle }) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [lastName, setLastName] = useState("");
+
   const sendForm = (e) => {
     e.preventDefault();
+    // console.log(name, email, password, lastName);
   };
   return (
     <div className="max-w-7xl px-4 py-16 mt-20 mx-auto sm:px-6 lg:px-8">
@@ -31,6 +37,8 @@ export default function Register({ toggle }) {
                 id="lastname"
                 className="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
                 placeholder="Entrez votre nom"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
               />
             </div>
           </div>
@@ -49,6 +57,8 @@ export default function Register({ toggle }) {
                 id="firstname"
                 className="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
                 placeholder="Entrez votre prénom"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
           </div>
@@ -64,6 +74,8 @@ export default function Register({ toggle }) {
                 id="email"
                 className="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
                 placeholder="Entrez votre email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
 
               <span className="absolute inset-y-0 inline-flex items-center right-4">
@@ -83,6 +95,8 @@ export default function Register({ toggle }) {
                 id="password"
                 className="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
                 placeholder="Entrez votre mot de passe"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
 
               <span className="absolute inset-y-0 inline-flex items-center right-4">
@@ -95,7 +109,7 @@ export default function Register({ toggle }) {
             type="submit"
             className="block w-full px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg"
           >
-            Connexion
+            Créer votre compte
           </button>
 
           <p className="text-sm text-center text-gray-500">
