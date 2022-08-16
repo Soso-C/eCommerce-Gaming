@@ -24,7 +24,10 @@ export default function Login({ toggle }) {
           </p>
 
           <div>
-            <label for="email" className="text-sm font-medium text-zinc-800">
+            <label
+              htmlFor="email"
+              className="text-sm font-medium text-zinc-800"
+            >
               Email
             </label>
 
@@ -45,7 +48,10 @@ export default function Login({ toggle }) {
           </div>
 
           <div>
-            <label for="password" className="text-sm font-medium text-zinc-800">
+            <label
+              htmlFor="password"
+              className="text-sm font-medium text-zinc-800"
+            >
               Mot de passe
             </label>
 

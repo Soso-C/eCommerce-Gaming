@@ -5,6 +5,17 @@ const bodyParser = require("body-parser");
 const port = 3001;
 const product = require("./db/mockArticles");
 const cors = require("cors");
+const db = require("./models");
+
+db.sequelize
+  .sync()
+  .then((result) => {
+    app.listen(port, () => console.log(`Server running on port:  ${port}!`));
+    console.log("Db Connected");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -36,5 +47,3 @@ app.get("/bestArticles", (req, res) => {
   );
   res.status(200).json({ message: "Produit trouvée", data: result });
 });
-
-app.listen(port, () => console.log(`Server running on port:  ${port}!`));
