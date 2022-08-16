@@ -6,7 +6,7 @@ import { getArticleById } from "../api/article";
 export default function Article() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
-  const url = `http://localhost:3001/articles/${id}`;
+  const url = `http://localhost:3001/api/articles/${id}`;
   useEffect(() => {
     getArticleById(url)
       .then((res) => {

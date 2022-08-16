@@ -9,7 +9,7 @@ export async function getArticleById(urlEndPoint) {
 
 // Get all Articles
 export async function getArticles() {
-  const articleResponse = await axios.get("http://localhost:3001/articles");
+  const articleResponse = await axios.get("http://localhost:3001/api/articles");
   if (!articleResponse) return "sorry, couldn’t load articles";
   return articleResponse.data.data;
 }
@@ -17,7 +17,9 @@ export async function getArticles() {
 // Get Nouveautés
 
 export async function getNewsProd() {
-  const articleResponse = await axios.get("http://localhost:3001/newArticles");
+  const articleResponse = await axios.get(
+    "http://localhost:3001/api/articles/newArticles"
+  );
   if (!articleResponse) return "sorry, couldn’t load articles";
   return articleResponse.data.data;
 }
@@ -25,7 +27,9 @@ export async function getNewsProd() {
 // Get BestSelling
 
 export async function getBestSelling() {
-  const articleResponse = await axios.get("http://localhost:3001/bestArticles");
+  const articleResponse = await axios.get(
+    "http://localhost:3001/api/articles/bestArticles"
+  );
   if (!articleResponse) return "sorry, couldn’t load articles";
   return articleResponse.data.data;
 }
