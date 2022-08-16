@@ -31,3 +31,7 @@ require("./routes/Articles/getAllArticles")(app);
 require("./routes/Articles/getNewArticles")(app);
 require("./routes/Articles/getBestArticles")(app);
 require("./routes/Articles/getArticleById")(app);
+
+// Auth Routes
+
+require("./routes/Auth/register")(app);

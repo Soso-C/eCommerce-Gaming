@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { AiOutlineEye } from "react-icons/ai";
 import { FiAtSign } from "react-icons/fi";
 export default function Register({ toggle }) {
+  const [passwordShow, setPasswordShow] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -100,7 +101,7 @@ export default function Register({ toggle }) {
 
             <div className="relative mt-1">
               <input
-                type="password"
+                type={passwordShow ? "text" : "password"}
                 id="password"
                 className="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
                 placeholder="Entrez votre mot de passe"
@@ -108,8 +109,11 @@ export default function Register({ toggle }) {
                 onChange={(e) => setPassword(e.target.value)}
               />
 
-              <span className="absolute inset-y-0 inline-flex items-center right-4">
-                <AiOutlineEye className="w-6 h-6 text-gray-400" />
+              <span
+                className="absolute inset-y-0 inline-flex items-center right-4 cursor-pointer "
+                onClick={() => setPasswordShow(!passwordShow)}
+              >
+                <AiOutlineEye className="w-6 h-6 text-gray-400 hover:text-amber-500" />
               </span>
             </div>
           </div>
