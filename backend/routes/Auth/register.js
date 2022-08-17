@@ -23,16 +23,16 @@ module.exports = (app) => {
               name,
               lastname,
             });
-            return res.status(201).json({
-              token: jwt.sign(
-                {
-                  email,
-                  name,
-                },
-                process.env.SECRET_KEY,
-                { expiresIn: "24h" }
-              ),
-            });
+          });
+          return res.status(201).json({
+            token: jwt.sign(
+              {
+                email,
+                name,
+              },
+              process.env.SECRET_KEY,
+              { expiresIn: "24h" }
+            ),
           });
         }
         // else

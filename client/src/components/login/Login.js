@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { AiOutlineEye } from "react-icons/ai";
 import { FiAtSign } from "react-icons/fi";
+import { loginUser } from "../../api/user";
 export default function Login({ toggle }) {
   const [passwordShow, setPasswordShow] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const sendForm = (e) => {
     e.preventDefault();
-    // console.table({ email, password });
+    loginUser(email, password).then((res) => alert("Connexion réussie"));
   };
   return (
     <div className="max-w-7xl px-4 py-16 mt-20 mx-auto sm:px-6 lg:px-8">

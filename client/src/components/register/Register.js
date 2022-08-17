@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineEye } from "react-icons/ai";
 import { FiAtSign } from "react-icons/fi";
+import { registerUser } from "../../api/user";
 export default function Register({ toggle }) {
   const [passwordShow, setPasswordShow] = useState(false);
   const [name, setName] = useState("");
@@ -10,7 +11,13 @@ export default function Register({ toggle }) {
 
   const sendForm = (e) => {
     e.preventDefault();
-    // console.log(name, email, password, lastName);
+    registerUser(email, password, name, lastName)
+      .then((res) => {
+        alert("compte créé avec succes");
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
   };
   return (
     <div className="max-w-7xl px-4 py-16 mt-20 mx-auto sm:px-6 lg:px-8">

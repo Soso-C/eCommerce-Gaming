@@ -18,7 +18,7 @@ module.exports = (app) => {
           // Si hash pas valide on return error
           if (!isPasswordValid) {
             const message = "L'email ou le mot de passe n'existe pas";
-            return res.json({ message });
+            return res.status(404).json({ message });
           }
 
           // Si tout est ok alors on log et on drop un token
@@ -28,7 +28,7 @@ module.exports = (app) => {
           });
 
           const message = `L'utilisateur a été connecté avec succès`;
-          return res.json({ message, data: user, token });
+          return res.status(201).json({ message, data: user, token });
         });
       })
       .catch((err) => {
