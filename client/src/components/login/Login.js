@@ -8,7 +8,9 @@ export default function Login({ toggle }) {
   const [password, setPassword] = useState("");
   const sendForm = (e) => {
     e.preventDefault();
-    loginUser(email, password).then((res) => alert("Connexion réussie"));
+    loginUser(email, password)
+      .then((res) => alert(res.data.message))
+      .catch((err) => alert(err.response.data.message));
   };
   return (
     <div className="max-w-7xl px-4 py-16 mt-20 mx-auto sm:px-6 lg:px-8">

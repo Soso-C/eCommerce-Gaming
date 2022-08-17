@@ -12,12 +12,8 @@ export default function Register({ toggle }) {
   const sendForm = (e) => {
     e.preventDefault();
     registerUser(email, password, name, lastName)
-      .then((res) => {
-        alert("compte créé avec succes");
-      })
-      .catch((err) => {
-        alert(err.message);
-      });
+      .then((res) => alert(res.data.message))
+      .catch((err) => alert(err.response.data.message));
   };
   return (
     <div className="max-w-7xl px-4 py-16 mt-20 mx-auto sm:px-6 lg:px-8">
