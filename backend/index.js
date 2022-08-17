@@ -7,18 +7,7 @@ const port = 3001;
 const cors = require("cors");
 const db = require("./models");
 
-// Db and server initialization
-db.sequelize
-  .sync()
-  .then((result) => {
-    app.listen(port, () => console.log(`Server running on port:  ${port}!`));
-    console.log("Db Connected");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-
-// Middleware
+// Main Middleware
 app
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: true }))
@@ -26,12 +15,25 @@ app
   .use(cors())
   .use(helmet());
 
-// Articles Routes
+// Articles Endpoint
 require("./routes/Articles/getAllArticles")(app);
 require("./routes/Articles/getNewArticles")(app);
 require("./routes/Articles/getBestArticles")(app);
 require("./routes/Articles/getArticleById")(app);
 
-// Auth Routes
-
+// Auth Endpoint
 require("./routes/Auth/register")(app);
+require("./routes/Auth/login")(app);
+
+// Db and server initialization
+db.sequelize
+  .sync()
+  .then((result) => {
+    app.listen(port, () =>
+      console.log(`Le serveur est actif sur le port: ${port}!`)
+    );
+    console.log("Connexion a la DB réussie");
+  })
+  .catch((err) => {
+    console.log(err);
+  });

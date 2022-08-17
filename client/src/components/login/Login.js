@@ -85,7 +85,7 @@ export default function Login({ toggle }) {
           </button>
 
           <p className="text-sm text-center text-gray-500">
-            Nouveau client ?{" "}
+            Nouveau client?{" "}
             <span
               className="underline font-semibold cursor-pointer"
               href=""

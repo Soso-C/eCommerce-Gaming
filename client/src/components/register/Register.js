@@ -126,7 +126,7 @@ export default function Register({ toggle }) {
           </button>
 
           <p className="text-sm text-center text-gray-500">
-            Déjà client ?{" "}
+            Déjà client?{" "}
             <span
               className="underline font-semibold cursor-pointer"
               href=""
