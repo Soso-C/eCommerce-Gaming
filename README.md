@@ -1,10 +1,10 @@
 # SC Shop
 
-eCommerce Gaming Shop (Pas Fini actullement)
+eCommerce Gaming Shop (Pas fini actuellement en développement)
 
 ## Stack Technique
 
-React.JS - Tailwind CSS - Context - NodeJS - ExpressJS - Sequelize
+React.JS - Tailwind CSS - Context - NodeJS - ExpressJS - Sequelize - MYSQL
 
 ## Design du site
 
