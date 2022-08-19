@@ -12,7 +12,9 @@ export default function Register({ toggle }) {
   const sendForm = (e) => {
     e.preventDefault();
     registerUser(email, password, name, lastName)
-      .then((res) => alert(res.data.message))
+      .then((res) => {
+        return alert(res.data.message);
+      })
       .catch((err) => alert(err.response.data.message));
   };
   return (

@@ -28,7 +28,14 @@ module.exports = (app) => {
           });
 
           const message = `L'utilisateur a été connecté avec succès`;
-          return res.status(201).json({ message, data: user, token });
+          const data = {
+            id: user?.id,
+            name: user?.name,
+            email: user?.email,
+            lastname: user?.lastname,
+            createdAt: user?.createdAt,
+          };
+          return res.status(201).json({ message, data, token });
         });
       })
       .catch((err) => {

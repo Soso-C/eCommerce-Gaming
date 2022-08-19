@@ -1,15 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { AiOutlineEye } from "react-icons/ai";
 import { FiAtSign } from "react-icons/fi";
 import { loginUser } from "../../api/user";
+import { UserContext } from "../../context/UserContext";
 export default function Login({ toggle }) {
+  const { setIsAuth, setUser, user } = useContext(UserContext);
   const [passwordShow, setPasswordShow] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const sendForm = (e) => {
     e.preventDefault();
     loginUser(email, password)
-      .then((res) => alert(res.data.message))
+      .then((res) => {
+        return (
+          alert(res.data.message),
+          setIsAuth(true),
+          setEmail(""),
+          setPassword(""),
+          setUser(res.data.data),
+          console.log(res.data)
+        );
+      })
       .catch((err) => alert(err.response.data.message));
   };
   return (
