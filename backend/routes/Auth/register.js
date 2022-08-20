@@ -26,7 +26,7 @@ module.exports = (app) => {
               .then((createdUser) => {
                 // JWT
                 const token = jwt.sign(
-                  { id: createdUser.id },
+                  { id: createdUser?.id },
                   process.env.SECRET_KEY,
                   {
                     expiresIn: "24h",

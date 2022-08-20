@@ -5,23 +5,23 @@ const { User } = require("../../models");
 module.exports = (app) => {
   app.post("/api/auth/login", (req, res) => {
     const { email, password } = req.body;
-    // On cherche si l'email est existante dans notre db
+    // On cherche si l'email est existant dans notre db
     User.findOne({ where: { email } })
       .then((user) => {
-        // Si pas existante alors on return une error
+        // Si pas existant alors on return un msg error
         if (!user) {
-          const message = "L'email ou le mot de passe n'existe pas";
+          const message = "Email ou mot de passe invalide";
           return res.status(404).json({ message });
         }
         // Si existante alors on comparer le hash
         bcrypt.compare(password, user.password).then((isPasswordValid) => {
-          // Si hash pas valide on return error
+          // Si hash pas valide on return msg error
           if (!isPasswordValid) {
-            const message = "L'email ou le mot de passe n'existe pas";
+            const message = "Email ou mot de passe invalide";
             return res.status(404).json({ message });
           }
 
-          // Si tout est ok alors on log et on drop un token
+          // Si tout est ok alors on log et on créé un token
           // JWT
           const token = jwt.sign({ userid: user.id }, process.env.SECRET_KEY, {
             expiresIn: "24h",
