@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AiOutlineEye } from "react-icons/ai";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { FiAtSign } from "react-icons/fi";
 import { registerUser } from "../../api/user";
 export default function Register({ toggle }) {
@@ -118,7 +118,11 @@ export default function Register({ toggle }) {
                 className="absolute inset-y-0 inline-flex items-center right-4 cursor-pointer "
                 onClick={() => setPasswordShow(!passwordShow)}
               >
-                <AiOutlineEye className="w-6 h-6 text-gray-400 hover:text-amber-500" />
+                {passwordShow ? (
+                  <AiOutlineEyeInvisible className="w-6 h-6 text-red-500 hover:text-amber-500" />
+                ) : (
+                  <AiOutlineEye className="w-6 h-6 text-gray-400 hover:text-amber-500" />
+                )}
               </span>
             </div>
           </div>

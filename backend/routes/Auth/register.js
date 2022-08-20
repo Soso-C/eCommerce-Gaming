@@ -22,7 +22,7 @@ module.exports = (app) => {
               name,
               lastname,
             })
-              // Une fois le compté créé on récupere les données de l'user et on crée un token
+              // Une fois le compte créé on récupere les données de l'user et on créé un token
               .then((createdUser) => {
                 // JWT
                 const token = jwt.sign(

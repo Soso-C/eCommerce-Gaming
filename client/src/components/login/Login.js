@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
-import { AiOutlineEye } from "react-icons/ai";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { FiAtSign } from "react-icons/fi";
 import { loginUser } from "../../api/user";
 import { UserContext } from "../../context/UserContext";
 export default function Login({ toggle }) {
-  const { setIsAuth, setUser, user } = useContext(UserContext);
+  const { setIsAuth, setUser } = useContext(UserContext);
   const [passwordShow, setPasswordShow] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -86,7 +86,11 @@ export default function Login({ toggle }) {
                 }
                 onClick={() => setPasswordShow(!passwordShow)}
               >
-                <AiOutlineEye className="w-6 h-6 text-gray-400 hover:text-amber-500" />
+                {passwordShow ? (
+                  <AiOutlineEyeInvisible className="w-6 h-6 text-red-500 hover:text-amber-500" />
+                ) : (
+                  <AiOutlineEye className="w-6 h-6 text-gray-400 hover:text-amber-500" />
+                )}
               </span>
             </div>
           </div>

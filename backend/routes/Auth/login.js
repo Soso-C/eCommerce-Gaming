@@ -13,7 +13,7 @@ module.exports = (app) => {
           const message = "Email ou mot de passe invalide";
           return res.status(404).json({ message });
         }
-        // Si existante alors on comparer le hash
+        // Si existant alors on compare le hash
         bcrypt.compare(password, user.password).then((isPasswordValid) => {
           // Si hash pas valide on return msg error
           if (!isPasswordValid) {
