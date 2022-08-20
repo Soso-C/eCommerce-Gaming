@@ -11,13 +11,9 @@ export const UserContextProvider = ({ children }) => {
     localStorage.setItem("user", JSON.stringify(user));
   }, [user]);
 
-  const [isAuth, setIsAuth] = useState(false);
-
   const value = {
     user,
     setUser,
-    isAuth,
-    setIsAuth,
   };
 
   return (

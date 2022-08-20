@@ -15,10 +15,10 @@ import Cart from "./pages/Cart";
 import Products from "./pages/Products";
 import CheckoutPage from "./pages/CheckoutPage";
 import LoginPage from "./pages/LoginPage";
-import { CartContext } from "./context/CartContext";
-
+// import useCart from "./hooks/useCart";
+import AuthRoute from "./components/PrivateRoute/AuthRoute";
 export default function App() {
-  const { cart } = useContext(CartContext);
+  // const { cart } = useCart();
   return (
     <div className="bg-gray-100">
       <Router>
@@ -29,10 +29,9 @@ export default function App() {
           <Route path="/article/:id" element={<Article />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/category/:slug" element={<Products />} />
-          <Route
-            path="/checkout"
-            element={cart.length > 0 ? <CheckoutPage /> : <Navigate to="/" />}
-          />
+          <Route element={<AuthRoute />}>
+            <Route path="/checkout" element={<CheckoutPage />} />
+          </Route>
           <Route path="/login" element={<LoginPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

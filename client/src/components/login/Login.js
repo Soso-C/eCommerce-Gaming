@@ -1,13 +1,18 @@
 import React, { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { FiAtSign } from "react-icons/fi";
 import { loginUser } from "../../api/user";
 import useAuth from "../../hooks/useAuth";
 export default function Login({ toggle }) {
-  const { setIsAuth, setUser } = useAuth();
+  const { setUser } = useAuth();
   const [passwordShow, setPasswordShow] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || "/";
   const sendForm = (e) => {
     e.preventDefault();
     loginUser(email, password)
@@ -17,9 +22,9 @@ export default function Login({ toggle }) {
         return (
           alert(res.data.message),
           setUser({ data, accessToken }),
-          setIsAuth(true),
           setEmail(""),
-          setPassword("")
+          setPassword(""),
+          navigate(from, { replace: true })
         );
       })
       .catch((err) => alert(err.response.data.message));

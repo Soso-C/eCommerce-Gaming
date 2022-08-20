@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { FiAtSign } from "react-icons/fi";
+import { useLocation, useNavigate } from "react-router-dom";
 import { registerUser } from "../../api/user";
 import useAuth from "../../hooks/useAuth";
+
 export default function Register({ toggle }) {
-  const { setIsAuth, setUser } = useAuth();
+  const { setUser } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || "/";
   const [passwordShow, setPasswordShow] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -19,8 +24,8 @@ export default function Register({ toggle }) {
         const accessToken = res.data.accessToken;
         return (
           alert(res.data.message),
-          setIsAuth(true),
-          setUser({ data, accessToken })
+          setUser({ data, accessToken }),
+          navigate(from, { replace: true })
         );
       })
       .catch((err) => alert(err.response.data.message));
