@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import Basket from "../components/basket/Basket";
-import { CartContext } from "../context/CartContext";
+import useCart from "../hooks/useCart";
 
 export default function Cart() {
-  const { cart } = useContext(CartContext);
+  const { cart } = useCart();
   return (
     <div className={cart.length === 0 ? "h-full w-full" : ""}>
       {cart.length === 0 ? <BasketEmpty /> : <Basket />}

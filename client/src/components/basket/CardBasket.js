@@ -1,11 +1,11 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-import { CartContext } from "../../context/CartContext";
+import useCart from "../../hooks/useCart";
 
 export default function CardBasket({ article }) {
   const navigate = useNavigate();
-  const { removeItem, changeQty } = useContext(CartContext);
+  const { removeItem, changeQty } = useCart();
 
   const [qty, setQty] = useState(article.quantity);
 

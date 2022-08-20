@@ -17,7 +17,6 @@ export default function Register({ toggle }) {
       .then((res) => {
         const data = res.data.data;
         const accessToken = res.data.accessToken;
-        console.log(accessToken);
         return (
           alert(res.data.message),
           setIsAuth(true),

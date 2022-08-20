@@ -19,8 +19,7 @@ export default function Login({ toggle }) {
           setUser({ data, accessToken }),
           setIsAuth(true),
           setEmail(""),
-          setPassword(""),
-          console.log(res.data)
+          setPassword("")
         );
       })
       .catch((err) => alert(err.response.data.message));
