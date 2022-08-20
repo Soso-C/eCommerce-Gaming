@@ -1,10 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { FiAtSign } from "react-icons/fi";
 import { loginUser } from "../../api/user";
-import { UserContext } from "../../context/UserContext";
+import useAuth from "../../hooks/useAuth";
 export default function Login({ toggle }) {
-  const { setIsAuth, setUser } = useContext(UserContext);
+  const { setIsAuth, setUser } = useAuth();
   const [passwordShow, setPasswordShow] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,12 +12,14 @@ export default function Login({ toggle }) {
     e.preventDefault();
     loginUser(email, password)
       .then((res) => {
+        const data = res.data.data;
+        const accessToken = res.data.accessToken;
         return (
           alert(res.data.message),
+          setUser({ data, accessToken }),
           setIsAuth(true),
           setEmail(""),
           setPassword(""),
-          setUser(res.data.data),
           console.log(res.data)
         );
       })

@@ -24,29 +24,50 @@ module.exports = (app) => {
             })
               // Une fois le compte créé on récupere les données de l'user et on créé un token
               .then((createdUser) => {
-                // JWT
-                const token = jwt.sign(
-                  { id: createdUser?.id },
+                // JWT accessToken
+                const accessToken = jwt.sign(
+                  {
+                    userInfo: {
+                      id: createdUser?.id,
+                      roles: "user",
+                    },
+                  },
                   process.env.SECRET_KEY,
                   {
-                    expiresIn: "24h",
+                    expiresIn: "1h",
                   }
                 );
 
+                //JWT RefreshToken
+                const refreshToken = jwt.sign(
+                  {
+                    userInfo: {
+                      id: createdUser?.id,
+                    },
+                  },
+                  process.env.REFRESH_SECRET_KEY,
+                  {
+                    expiresIn: "1d",
+                  }
+                );
+
+                const message = `L'utilisateur a été connecté avec succès`;
                 const data = {
                   id: createdUser?.id,
                   name: createdUser?.name,
                   email: createdUser?.email,
                   lastname: createdUser?.lastname,
+                  createdAt: createdUser?.createdAt,
+                  roles: "user",
                 };
-
-                const message = `L'utilisateur a été créé avec succès`;
-
-                return res.status(200).json({
-                  message,
-                  data,
-                  token,
-                });
+                return (
+                  res.cookie("jwt", refreshToken, {
+                    httpOnly: true,
+                    sameSite: "None",
+                    maxAge: 24 * 60 * 60 * 1000,
+                  }),
+                  res.status(201).json({ message, data, accessToken })
+                );
               });
           });
         }

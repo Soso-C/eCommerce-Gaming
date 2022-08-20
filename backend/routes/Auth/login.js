@@ -21,11 +21,32 @@ module.exports = (app) => {
             return res.status(404).json({ message });
           }
 
-          // Si tout est ok alors on log et on créé un token
-          // JWT
-          const token = jwt.sign({ userid: user.id }, process.env.SECRET_KEY, {
-            expiresIn: "24h",
-          });
+          // JWT accessToken
+          const accessToken = jwt.sign(
+            {
+              userInfo: {
+                id: user?.id,
+                roles: "user",
+              },
+            },
+            process.env.SECRET_KEY,
+            {
+              expiresIn: "1h",
+            }
+          );
+
+          //JWT RefreshToken
+          const refreshToken = jwt.sign(
+            {
+              userInfo: {
+                id: user?.id,
+              },
+            },
+            process.env.REFRESH_SECRET_KEY,
+            {
+              expiresIn: "1d",
+            }
+          );
 
           const message = `L'utilisateur a été connecté avec succès`;
           const data = {
@@ -34,8 +55,16 @@ module.exports = (app) => {
             email: user?.email,
             lastname: user?.lastname,
             createdAt: user?.createdAt,
+            roles: "user",
           };
-          return res.status(201).json({ message, data, token });
+          return (
+            res.cookie("jwt", refreshToken, {
+              httpOnly: true,
+              sameSite: "None",
+              maxAge: 24 * 60 * 60 * 1000,
+            }),
+            res.status(201).json({ message, data, accessToken })
+          );
         });
       })
       .catch((err) => {

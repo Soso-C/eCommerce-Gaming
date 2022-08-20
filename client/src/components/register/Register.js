@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { FiAtSign } from "react-icons/fi";
 import { registerUser } from "../../api/user";
+import useAuth from "../../hooks/useAuth";
 export default function Register({ toggle }) {
+  const { setIsAuth, setUser } = useAuth();
   const [passwordShow, setPasswordShow] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -13,7 +15,14 @@ export default function Register({ toggle }) {
     e.preventDefault();
     registerUser(email, password, name, lastName)
       .then((res) => {
-        return alert(res.data.message);
+        const data = res.data.data;
+        const accessToken = res.data.accessToken;
+        console.log(accessToken);
+        return (
+          alert(res.data.message),
+          setIsAuth(true),
+          setUser({ data, accessToken })
+        );
       })
       .catch((err) => alert(err.response.data.message));
   };
