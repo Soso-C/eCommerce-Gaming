@@ -4,9 +4,12 @@ import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
 import { IoBagOutline } from "react-icons/io5";
 import { VscAccount } from "react-icons/vsc";
 import useCart from "../../hooks/useCart";
+import useAuth from "../../hooks/useAuth";
 export default function Navbar() {
   const [toggle, setToggle] = useState(false);
   const [toggleSb, setToggleSb] = useState(false);
+
+  const { user } = useAuth();
 
   const navigate = useNavigate();
 
@@ -76,7 +79,11 @@ export default function Navbar() {
           </button>
           <button
             className="flex md:flex-col items-center justify-center text-white border-r border-white md:border-none px-2 hover:opacity-75"
-            onClick={() => navigate("/login")}
+            onClick={
+              user?.data
+                ? () => navigate("/dashboard")
+                : () => navigate("/login")
+            }
           >
             <VscAccount className="w-8 h-8" />
             <span className="hidden md:block font-medium py-1">Compte</span>

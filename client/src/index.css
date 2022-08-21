@@ -19,9 +19,9 @@ body,
   flex-direction: column;
 }
 
-/* footer {
-  margin-top: auto;
-} */
+* {
+  scroll-behavior: smooth;
+}
 
 /* clears the ‘X’ from Internet Explorer */
 input[type="search"]::-ms-clear {

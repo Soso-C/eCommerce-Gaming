@@ -1,10 +1,5 @@
-import React, { useContext } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import TopNavbarMessage from "./components/topnavbar/TopNavbarMessage";
@@ -15,10 +10,10 @@ import Cart from "./pages/Cart";
 import Products from "./pages/Products";
 import CheckoutPage from "./pages/CheckoutPage";
 import LoginPage from "./pages/LoginPage";
-// import useCart from "./hooks/useCart";
 import AuthRoute from "./components/PrivateRoute/AuthRoute";
+import DashboardPage from "./pages/DashboardPage";
+
 export default function App() {
-  // const { cart } = useCart();
   return (
     <div className="bg-gray-100">
       <Router>
@@ -31,6 +26,7 @@ export default function App() {
           <Route path="/category/:slug" element={<Products />} />
           <Route element={<AuthRoute />}>
             <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
           </Route>
           <Route path="/login" element={<LoginPage />} />
           <Route path="*" element={<NotFound />} />
