@@ -25,6 +25,7 @@ export default function App() {
           <Route path="/article/:id" element={<Article />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/category/:slug" element={<Products />} />
+          {/* Besoin d'etre auth pour avoir acces a ces routes */}
           <Route element={<AuthRoute />}>
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/dashboard" element={<DashboardPage />} />
