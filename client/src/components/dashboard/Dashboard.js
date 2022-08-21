@@ -10,7 +10,7 @@ export default function Dashboard() {
     setIndex(index);
   };
   return (
-    <div className="w-full mx-auto max-w-7xl flex flex-col md:flex-row mt-20 md:mt-36 justify-between min-h-[50vh]">
+    <div className="w-full mx-auto max-w-7xl flex flex-col md:flex-row pt-20 md:pt-36 md:justify-between bg-gray-100 min-h-[60vh]">
       <LeftNavDashboard moveIndex={changeIndex} />
       {index === 1 ? (
         <DashboardOrders />

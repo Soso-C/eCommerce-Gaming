@@ -2,7 +2,7 @@ import React from "react";
 
 export default function DashboardSettings() {
   return (
-    <form className="mt-10 md:mt-0 px-6 mb-0 space-y-4 rounded-lg w-full md:w-1/2 mx-auto">
+    <form className="pt-10 md:pt-0 px-4 mb-0 space-y-4 rounded-lg w-full md:w-1/2 mx-auto">
       <p className="text-lg font-medium text-zinc-800">
         Changer vos informations
       </p>
